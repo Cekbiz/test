@@ -14,40 +14,48 @@
       background-color: #fafafa;
       font-family: Arial, sans-serif;
     }
-    .button {
-      display: block;       /* Supaya tombol tampil satu per baris */
-      margin-bottom: 10px;  /* Jarak antara tombol */
+
+    .container {
+      display: flex;
+      flex-direction: column; /* Supaya vertikal */
+      align-items: center;    /* Tengah secara horizontal */
+      gap: 20px;              /* Jarak antar tombol */
+    }
+
+    .button, .button2 {
       padding: 15px 30px;
-      background-color: #E1306C;
       color: white;
       text-decoration: none;
       font-size: 16px;
       border-radius: 8px;
       transition: background-color 0.3s;
+      width: 200px;            /* Biar sama ukurannya */
+      text-align: center;
     }
+
+    .button {
+      background-color: #E1306C;
+    }
+
     .button:hover {
       background-color: #c92a61;
     }
 
     .button2 {
-      display: block;       /* Supaya tombol tampil satu per baris */
-      margin-top: 10px;     /* Jarak antara tombol */
-      padding: 10px 15px;   /* Tambahan biar tombolnya nyaman diklik */
       background-color: #007bff;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
     }
 
     .button2:hover {
       background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
 
-  <a class="button" href="instagram://direct-inbox">Direct Message Instagram</a>
-
-  <a class="button2" id="instaDM" href="#">Buka DM Instagram</a>
+  <div class="container">
+    <a class="button" href="instagram://direct-inbox">Direct Message Instagram</a>
+    <a class="button2" id="instaDM" href="#">Buka DM Instagram</a>
+  </div>
 
   <script>
     document.getElementById('instaDM').addEventListener('click', function(e) {
